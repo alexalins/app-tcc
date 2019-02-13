@@ -1,6 +1,6 @@
-<ion-view title="Meus pacientes" id="page2">
+<ion-view title="Meus pacientes" id="page2" style="background-color: #038AD3">
   <ion-content padding="true" class="has-header">
-    <a ui-sref="menu.cadastroPaciente()" id="meusPacientes-button4" class="button button-positive button-block icon-right ion-android-add">Cadastrar paciente</a>
+    <a ui-sref="menu.cadastroPaciente()" id="meusPacientes-button4" class="button button-balanced button-block icon-right ion-android-add">Cadastrar paciente</a>
     <form id="meusPacientes-form6" class="list">
       <label class="item item-input" id="meusPacientes-search2">
         <i class="icon ion-search placeholder-icon"></i>
@@ -8,10 +8,8 @@
       </label>
     </form>
     <div class="list card" id="meusPacientes-card25">
-      <ion-list id="meusPacientes-list3">
-        <ion-item id="meusPacientes-list-item30" ui-sref="menu.paciente()">Paciente 1</ion-item>
-        <ion-item id="meusPacientes-list-item31" ui-sref="menu.paciente()">Paciente 2</ion-item>
-        <ion-item id="meusPacientes-list-item32" ui-sref="menu.paciente()">Paciente 3</ion-item>
+      <ion-list id="meusPacientes-list3" ng-repeat="paciente in fono.pacientes">
+        <ion-item id="meusPacientes-list-item30" ui-sref="menu.paciente()">{{paciente.nome}}</ion-item>
       </ion-list>
     </div>
   </ion-content>

@@ -1,20 +1,20 @@
-<ion-view title="Login" id="page4">
+<ion-view title="Login" id="page4" style="background-color: #038AD3">
   <ion-content padding="true" class="has-header">
     <form id="login-form1" class="list">
       <div class="spacer" style="width: 300px; height: 66px;"></div>
       <ion-list id="login-list4">
         <label class="item item-input" id="login-input1">
-          <span class="input-label">Email</span>
-          <input type="email" placeholder="">
+          <span class="input-label">Login</span>
+          <input type="text" placeholder="" name="login" ng-model="login.login">
         </label>
         <label class="item item-input" id="login-input2">
           <span class="input-label">Senha</span>
-          <input type="password" placeholder="">
+          <input type="password" placeholder="" name="senha" ng-model="login.senha">
         </label>
       </ion-list>
       <div class="spacer" style="width: 300px; height: 40px;"></div>
-      <a ui-sref="menu.inicio()" id="login-button1" class="button button-balanced button-block icon-right ion-arrow-right-c">Entrar</a>
-      <a ui-sref="menu.cadastro()" id="login-button2" class="button button-positive button-block button-clear">Ou criar minha conta</a>
+      <a ng-click="loginFono(login)" id="login-button1" class="button button-balanced button-block icon-right ion-arrow-right-c">Entrar</a>
+      <a ui-sref="cadastro()" id="login-button2" class="button button-stable button-block">Ou criar minha conta</a>
     </form>
   </ion-content>
 </ion-view>

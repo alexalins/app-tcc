@@ -4,12 +4,12 @@ angular.module('app.routes', [])
   $stateProvider
     
 
-      .state('menu.inicio', {
+    .state('menu.inicio', {
     url: '/inicio',
     views: {
       'side-menu21': {
         templateUrl: 'templates/inicio.html',
-        controller: 'inicioCtrl'
+        controller: 'fonoCtrl'
       }
     }
   })
@@ -19,7 +19,7 @@ angular.module('app.routes', [])
     views: {
       'side-menu21': {
         templateUrl: 'templates/meusPacientes.html',
-        controller: 'meusPacientesCtrl'
+        controller: 'fonoCtrl'
       }
     }
   })
@@ -28,16 +28,14 @@ angular.module('app.routes', [])
     url: '/sobre',
     views: {
       'side-menu21': {
-        templateUrl: 'templates/sobre.html',
-        controller: 'sobreCtrl'
+        templateUrl: 'templates/sobre.html'
       }
     }
   })
 
   .state('menu', {
     url: '/side-menu21',
-    templateUrl: 'templates/menu.html',
-    controller: 'menuCtrl'
+    templateUrl: 'templates/menu.html'
   })
 
   .state('login', {
@@ -46,14 +44,10 @@ angular.module('app.routes', [])
     controller: 'loginCtrl'
   })
 
-  .state('menu.cadastro', {
+  .state('cadastro', {
     url: '/cadastroFono',
-    views: {
-      'side-menu21': {
-        templateUrl: 'templates/cadastro.html',
-        controller: 'cadastroCtrl'
-      }
-    }
+    templateUrl: 'templates/cadastro.html',
+    controller: 'cadastroCtrl'
   })
 
   .state('menu.atualizar', {
@@ -61,7 +55,6 @@ angular.module('app.routes', [])
     views: {
       'side-menu21': {
         templateUrl: 'templates/atualizar.html',
-        controller: 'atualizarCtrl'
       }
     }
   })
@@ -71,7 +64,7 @@ angular.module('app.routes', [])
     views: {
       'side-menu21': {
         templateUrl: 'templates/cadastroPaciente.html',
-        controller: 'cadastroPacienteCtrl'
+        controller: 'cadastroCtrl'
       }
     }
   })
@@ -81,7 +74,7 @@ angular.module('app.routes', [])
     views: {
       'side-menu21': {
         templateUrl: 'templates/paciente.html',
-        controller: 'pacienteCtrl'
+        controller: 'fonoCtrl'
       }
     }
   })
@@ -131,7 +124,7 @@ angular.module('app.routes', [])
     views: {
       'side-menu21': {
         templateUrl: 'templates/meusDados.html',
-        controller: 'meusDadosCtrl'
+        controller: 'fonoCtrl'
       }
     }
   })
