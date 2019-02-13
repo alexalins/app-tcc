@@ -2,20 +2,140 @@
   <ion-content padding="true" class="has-header">
     <div class="list card" id="cadastroPalavras-card28">
       <form id="cadastroPalavras-form7" class="list">
-        <label class="item item-input" id="cadastroPalavras-input21">
-          <span class="input-label">Palavra</span>
-          <input type="text" placeholder="">
-        </label>
+        <div id="opcao1">
+          <label class="item item-input" id="cadastroPalavras-input21">
+            <span class="input-label">Palavra</span>
+            <input type="text" placeholder="" ng-model="palavra.palavra[0]">
+          </label>
+        </div>
+        <div id="opcao2">
+          <label class="item item-input" id="cadastroPalavras-input21">
+            <span class="input-label">Palavra</span>
+            <input type="text" placeholder="" ng-model="palavra.palavra[1]">
+          </label>
+        </div>
+        <div id="opcao3">
+          <label class="item item-input" id="cadastroPalavras-input21">
+            <span class="input-label">Palavra</span>
+            <input type="text" placeholder="" ng-model="palavra.palavra[2]">
+          </label>
+        </div>
+        <div id="opcao4">
+          <label class="item item-input" id="cadastroPalavras-input21">
+            <span class="input-label">Palavra</span>
+            <input type="text" placeholder="" ng-model="palavra.palavra[3]">
+          </label>
+        </div>
+        <div id="opcao5">
+          <label class="item item-input" id="cadastroPalavras-input21">
+            <span class="input-label">Palavra</span>
+            <input type="text" placeholder="" ng-model="palavra.palavra[4]">
+          </label>
+        </div>
+        <div id="opcao6">
+          <label class="item item-input" id="cadastroPalavras-input21">
+            <span class="input-label">Palavra</span>
+            <input type="text" placeholder="" ng-model="palavra.palavra[5]">
+          </label>
+        </div>
+        <div id="opcao7">
+          <label class="item item-input" id="cadastroPalavras-input21">
+            <span class="input-label">Palavra</span>
+            <input type="text" placeholder="" ng-model="palavra.palavra[6]">
+          </label>
+        </div>
+        <div id="opcao8">
+          <label class="item item-input" id="cadastroPalavras-input21">
+            <span class="input-label">Palavra</span>
+            <input type="text" placeholder="" ng-model="palavra.palavra[7]">
+          </label>
+        </div>
+        <div id="opcao9">
+          <label class="item item-input" id="cadastroPalavras-input21">
+            <span class="input-label">Palavra</span>
+            <input type="text" placeholder="" ng-model="palavra.palavra[8]">
+          </label>
+        </div>
+        <div id="opcao10">
+          <label class="item item-input" id="cadastroPalavras-input21">
+            <span class="input-label">Palavra</span>
+            <input type="text" placeholder="" ng-model="palavra.palavra[9]">
+          </label>
+        </div>
+        <div id="opcao11">
+          <label class="item item-input" id="cadastroPalavras-input21">
+            <span class="input-label">Palavra</span>
+            <input type="text" placeholder="" ng-model="palavra.palavra[10]">
+          </label>
+        </div>
+        <div id="opcao12">
+          <label class="item item-input" id="cadastroPalavras-input21">
+            <span class="input-label">Palavra</span>
+            <input type="text" placeholder="" ng-model="palavra.palavra[11]">
+          </label>
+        </div>
+        <div id="opcao13">
+          <label class="item item-input" id="cadastroPalavras-input21">
+            <span class="input-label">Palavra</span>
+            <input type="text" placeholder="" ng-model="palavra.palavra[12]">
+          </label>
+        </div>
+        <div id="opcao14">
+          <label class="item item-input" id="cadastroPalavras-input21">
+            <span class="input-label">Palavra</span>
+            <input type="text" placeholder="" ng-model="palavra.palavra[13]">
+          </label>
+        </div>
+        <div id="opcao15">
+          <label class="item item-input" id="cadastroPalavras-input21">
+            <span class="input-label">Palavra</span>
+            <input type="text" placeholder="" ng-model="palavra.palavra[14]">
+          </label>
+        </div>
+        <div id="opcao16">
+          <label class="item item-input" id="cadastroPalavras-input21">
+            <span class="input-label">Palavra</span>
+            <input type="text" placeholder="" ng-model="palavra.palavra[15]">
+          </label>
+        </div>
+        <div id="opcao17">
+          <label class="item item-input" id="cadastroPalavras-input21">
+            <span class="input-label">Palavra</span>
+            <input type="text" placeholder="" ng-model="palavra.palavra[16]">
+          </label>
+        </div>
+        <div id="opcao18">
+          <label class="item item-input" id="cadastroPalavras-input21">
+            <span class="input-label">Palavra</span>
+            <input type="text" placeholder="" ng-model="palavra.palavra[17]">
+          </label>
+        </div>
+        <div id="opcao19">
+          <label class="item item-input" id="cadastroPalavras-input21">
+            <span class="input-label">Palavra</span>
+            <input type="text" placeholder="" ng-model="palavra.palavra[18]">
+          </label>
+        </div>
+        <div id="opcao20">
+          <label class="item item-input" id="cadastroPalavras-input21">
+            <span class="input-label">Palavra</span>
+            <input type="text" placeholder="" ng-model="palavra.palavra[19]">
+          </label>
+        </div>
+
         <label class="item item-select" id="cadastroPalavras-select1">
           <span class="input-label">Nivel</span>
-          <select>
-            <option>Fácil</option>
-            <option>Médio</option>
-            <option>Dificíl</option>
+          <select  ng-model="palavra.nivel" ng-required="true">
+            <option value="facil">Fácil</option>
+            <option value="medio">Médio</option>
+            <option value="dificil">Dificíl</option>
           </select>
         </label>
         <div class="spacer" style="width: 300px; height: 59px;"></div>
-        <button id="cadastroPalavras-button8" class="button button-balanced button-block">Salvar</button>
+        <div align="right">
+            <button class="button icon ion-plus-round  button-assertive" ng-click="exibirOpcao()"></button>
+        </div>
+        <button id="cadastroPalavras-button8" nng-click="adicionarPalavras()" class="button button-balanced button-block">Salvar</button>
       </form>
     </div>
   </ion-content>

@@ -1,9 +1,6 @@
-app.controller('palavraCtrl', function($scope, $rootScope, $stateParams, $http, $ionicPopup, $ionicLoading, palavraService){
-    localStorage.setItem("idPaciente", $routeParams.id);
-    $scope.idPaciente = localStorage.getItem("idPaciente");
-    $scope.fono = angular.fromJson(localStorage.getItem("dados"));
-    //
-    palavraService.getPartidaPaciente($routeParams.id)
+app.controller('palavraCtrl', function($scope, $rootScope, $state, $stateParams, $http, $ionicPopup, $ionicLoading, palavraService){
+
+    palavraService.getPartidaPaciente($stateParams.id)
         .then(function (success) {
             $scope.palavras = success.data;
         })
@@ -28,7 +25,7 @@ app.controller('palavraCtrl', function($scope, $rootScope, $stateParams, $http, 
             console.log(palavra);
             palavraService.adicionarPalavra(palavra)
                 .then(function (success) {
-                    $location.path('/palavraPartida/' + $scope.idPaciente);
+                    $state.go('/palavra/' + $scope.idPaciente);
                 })
                 .catch(function (error) {
                 })
@@ -46,7 +43,6 @@ app.controller('palavraCtrl', function($scope, $rootScope, $stateParams, $http, 
     //
     var i = 1;
     $scope.exibirOpcao = function () {
-
         $("#opcao" + i).css("display", "block");
         i++;
     }

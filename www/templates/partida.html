@@ -3,9 +3,40 @@
     <div class="list card" id="partida-card27">
       <div class="item item-body" id="partida-list-item-container8">
         <div id="partida-markdown18" class="show-list-numbers-and-dots">
-          <p style="margin-top:0px;color:#000000;">
-            <strong>Informação da partida</strong>
-          </p>
+          <div class="list">
+            <div class="item item-divider">
+              Partida
+            </div>
+            <a class="item" href="#">
+              Jogo: {{partida.jogo.nome}}
+            </a>
+            <a class="item" href="#">
+              Tempo: {{partida.tempo}}
+            </a>
+            <a class="item" href="#">
+              Nivel: {{partida.nivel}}
+            </a>
+          </div>
+          <div class="list">
+            <div class="item item-divider">
+              Acertos
+            </div>
+            <a class="item" href="#" ng-repeat="acertos in partida.relatorio.acertos">
+              {{acertos.palavra}}
+            </a>
+          </div>
+          <div class="list">
+              <div class="item item-divider">
+                Erros
+              </div>
+              <a class="item" href="#" ng-repeat="erros in partida.relatorio.erros">
+                {{erros.palavra}}
+              </a>
+            </div>
+          <div>
+            <canvas id="myChart" width="300" height="300">
+            </canvas>
+          </div>
         </div>
       </div>
     </div>

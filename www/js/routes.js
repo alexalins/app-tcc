@@ -55,6 +55,7 @@ angular.module('app.routes', [])
     views: {
       'side-menu21': {
         templateUrl: 'templates/atualizar.html',
+        controller: 'fonoCtrl'
       }
     }
   })
@@ -70,27 +71,27 @@ angular.module('app.routes', [])
   })
 
   .state('menu.paciente', {
-    url: '/paciente',
+    url: '/paciente/:id',
     views: {
       'side-menu21': {
         templateUrl: 'templates/paciente.html',
-        controller: 'fonoCtrl'
+        controller: 'pacienteCtrl'
       }
     }
   })
 
   .state('menu.partidas', {
-    url: '/partidas',
+    url: '/partidas/:id',
     views: {
       'side-menu21': {
         templateUrl: 'templates/partidas.html',
-        controller: 'partidasCtrl'
+        controller: 'pacienteCtrl'
       }
     }
   })
 
   .state('menu.partida', {
-    url: '/partida',
+    url: '/partida/:id',
     views: {
       'side-menu21': {
         templateUrl: 'templates/partida.html',
@@ -100,21 +101,21 @@ angular.module('app.routes', [])
   })
 
   .state('menu.cadastroPalavras', {
-    url: '/cadastroPalavras',
+    url: '/cadastroPalavras/:id',
     views: {
       'side-menu21': {
         templateUrl: 'templates/cadastroPalavras.html',
-        controller: 'cadastroPalavrasCtrl'
+        controller: 'palavraCtrl'
       }
     }
   })
 
   .state('menu.palavras', {
-    url: '/palavras',
+    url: '/palavras/:id',
     views: {
       'side-menu21': {
         templateUrl: 'templates/palavras.html',
-        controller: 'palavrasCtrl'
+        controller: 'palavraCtrl'
       }
     }
   })

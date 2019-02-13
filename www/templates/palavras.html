@@ -1,17 +1,16 @@
 <ion-view title="Palavras" id="page11" style="background-color: #038AD3">
   <ion-content padding="true" class="has-header">
+    <div class="spacer" style="width: 300px; height: 20px;"></div>
+    <a href="#/side-menu21/cadastroPalavras/{{paciente.id}}" id="palavras-button9" class="button button-balanced button-block">Cadastrar
+      palavras</a>
     <div class="list card" id="palavras-card29">
       <form id="palavras-form8" class="list">
-        <a ui-sref="menu.cadastroPalavras()" id="palavras-button9" class="button button-positive button-block">Cadastrar palavras</a>
-        <div class="spacer" style="width: 300px; height: 20px;"></div>
         <label class="item item-input" id="palavras-search3">
           <i class="icon ion-search placeholder-icon"></i>
-          <input type="search" placeholder="">
+          <input type="search" placeholder="" ng-model="criterioDeBusca">
         </label>
-        <ion-list id="palavras-list8">
-          <ion-item id="palavras-list-item69">Palavra 1</ion-item>
-          <ion-item id="palavras-list-item70">Palavra 2</ion-item>
-          <ion-item id="palavras-list-item71">Palavra 3</ion-item>
+        <ion-list id="palavras-list8" ng-repeat="palavra in palavras | filter: criterioDeBusca | orderBy:'$index':true">
+          <ion-item id="palavras-list-item69">{{palavra.palavra}} - {{palavra.nivel}}</ion-item>
         </ion-list>
       </form>
     </div>

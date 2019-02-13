@@ -6,11 +6,9 @@
         <input type="search" placeholder="">
       </label>
     </form>
-    <div class="list card" id="partidas-card26">
-      <ion-list id="partidas-list6">
-        <ion-item id="partidas-list-item48" ui-sref="menu.partida()">Partida 1</ion-item>
-        <ion-item id="partidas-list-item49" ui-sref="menu.partida()">Partida 2</ion-item>
-        <ion-item id="partidas-list-item50" ui-sref="menu.partida()">Partida 3</ion-item>
+    <div class="list card" id="partidas-card26" ng-if="paciente.partidas.length > 0">
+      <ion-list id="partidas-list6" ng-repeat="partida in paciente.partidas | orderBy:'$index':true">
+        <ion-item id="partidas-list-item48" href="#/side-menu21/partida/{{partida.id}}">{{partida.jogo.nome}} - {{partida.tempo}}</ion-item>
       </ion-list>
     </div>
   </ion-content>

@@ -1,4 +1,4 @@
-app.controller('cadastroCtrl', function($scope, $rootScope, $stateParams, $http, $ionicPopup, $ionicLoading, cadastroService){
+app.controller('cadastroCtrl', function($scope, $rootScope, $state, $http, $ionicPopup, $ionicLoading, cadastroService){
     //
     dados = localStorage.getItem("dados");
     $scope.fono = angular.fromJson(dados);
@@ -6,8 +6,8 @@ app.controller('cadastroCtrl', function($scope, $rootScope, $stateParams, $http,
     $scope.cadastroFono = function (fono) {
         cadastroService.cadastroFono(fono)
             .then(function (success) {
-                alert("Cadatros realizado com sucesso!");
-                $location.path('/login');
+                alert("Cadatro realizado com sucesso!");
+                $state.go('login');
             })
             .catch(function (error) {
                 alert("Não foi possível realizar o cadastro");
@@ -17,8 +17,8 @@ app.controller('cadastroCtrl', function($scope, $rootScope, $stateParams, $http,
     $scope.cadastroPaciente = function(paciente, id){
         cadastroService .cadastroPaciente(paciente, $scope.fono.id)
         .then(function (success){
-            alert("Cadatros realizado com sucesso!");
-            $location.path('/pacientesFono');
+            alert("Cadatro realizado com sucesso!");
+            $state.go('menu.pacientes');
         })
         .catch(function(error){
             alert("Não foi possível realizar o cadastro");

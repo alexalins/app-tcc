@@ -4,37 +4,37 @@
       <ion-list id="cadastro-list5">
         <label class="item item-input" id="cadastro-input3">
           <span class="input-label">Nome</span>
-          <input type="text" placeholder="">
+          <input type="text" placeholder="" ng-model="fono.nome">
         </label>
         <label class="item item-input" id="cadastro-input6">
           <span class="input-label">Codigo</span>
-          <input type="text" placeholder="">
+          <input type="text" placeholder="" ng-model="fono.codigo">
         </label>
         <label class="item item-input" id="cadastro-input4">
           <span class="input-label">Login</span>
-          <input type="text" placeholder="">
+          <input type="text" placeholder="" ng-model="fono.login">
         </label>
         <label class="item item-input" id="cadastro-input5">
           <span class="input-label">Senha</span>
-          <input type="password" placeholder="">
+          <input type="password" placeholder="" ng-model="fono.senha">
         </label>
         <label class="item item-input" id="cadastro-input7">
           <span class="input-label">Rua</span>
-          <input type="text" placeholder="">
+          <input type="text" placeholder="" ng-model="fono.endereco.rua">
         </label>
         <label class="item item-input" id="cadastro-input8">
           <span class="input-label">Bairro</span>
-          <input type="text" placeholder="">
+          <input type="text" placeholder="" ng-model="fono.endereco.bairro">
         </label>
         <label class="item item-input" id="cadastro-input9">
           <span class="input-label">Cidade</span>
-          <input type="text" placeholder="">
+          <input type="text" placeholder="" ng-model="fono.endereco.cidade">
         </label>
         <label class="item item-input" id="cadastro-input10">
           <span class="input-label">Telefone</span>
-          <input type="tel" placeholder="">
+          <input type="tel" placeholder="" ng-model="fono.telefone">
         </label>
-        <a ui-sref="menu.login()" id="cadastro-button3" class="button button-balanced button-block icon-right ion-archive">Salvar</a>
+        <a ng-click="cadastroFono(fono)" id="cadastro-button3" class="button button-balanced button-block icon-right ion-archive">Salvar</a>
       </ion-list>
     </form>
   </ion-content>

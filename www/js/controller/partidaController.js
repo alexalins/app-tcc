@@ -1,10 +1,9 @@
-app.controller('partidaCtrl', function($scope, $rootScope, $stateParams, $http, $ionicPopup, $ionicLoading, partidaService){
-	partidaService.getPartida($routeParams.id)
+app.controller('partidaCtrl', function($scope, $rootScope, $state, $stateParams, $http, $ionicPopup, $ionicLoading, partidaService){
+	partidaService.getPartida($stateParams.id)
 		.then(function (success) {
 			$scope.partida = success.data;
-			console.log($scope.partida.tempo);
-			console.log($scope.partida);
-			relatorio($scope.partida.relatorio)
+			relatorio($scope.partida.relatorio);
+			$state.go('menu.partida');
 		})
 		.catch(function (error) {
 			alert("Não foi possível listar os dados");
@@ -33,5 +32,4 @@ app.controller('partidaCtrl', function($scope, $rootScope, $stateParams, $http, 
 			}
 		});
 	}
-
 })
