@@ -3,7 +3,6 @@ app.controller('loginCtrl', function($scope, $rootScope, $state, $http, $ionicPo
     $scope.login = {};
     $scope.loginFono = function(login){
         login.usuario = "fono";
-        console.log(login);
         loginService.loginFono(login)
         .then(function(success) {
             var dados = angular.toJson(success.data);

@@ -31,14 +31,12 @@ app.controller('fonoCtrl', function($scope, $state, $stateParams, $http, $ionicP
         if (resposta == true) {
             fonoService.removerFono($scope.fono.id)
                 .then(function (success) {
-                    $scope.fono = success.data;
-                    var dados = angular.toJson(success.data);
-                    localStorage.setItem("dados", dados);
+                    localStorage.clear();
                     //
-                    $location.path('/login');
+                    $state.go('login');
                 })
                 .catch(function (error) {
-                    alert("Não foi possível atualizar os dados");
+                    alert("Não foi possível remover os dados");
                 })
         }
     }

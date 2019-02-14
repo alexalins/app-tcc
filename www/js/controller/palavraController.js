@@ -1,15 +1,17 @@
 app.controller('palavraCtrl', function($scope, $rootScope, $state, $stateParams, $http, $ionicPopup, $ionicLoading, palavraService){
-
-    palavraService.getPartidaPaciente($stateParams.id)
+    dados = localStorage.getItem("dados");
+    $scope.fono = angular.fromJson(dados);
+    $scope.idPaciente = $stateParams.id;
+    //
+    palavraService.getPartidaPaciente($scope.idPaciente)
         .then(function (success) {
             $scope.palavras = success.data;
         })
         .catch(function (error) {
         })
     //
-    $scope.palavra = {}
+    $scope.palavra = {};
     $scope.adicionarPalavras = function () {
-
         for (item in $scope.palavra.palavra) {
             var palavra = {
                 "nivel": $scope.palavra.nivel,
@@ -21,11 +23,11 @@ app.controller('palavraCtrl', function($scope, $rootScope, $state, $stateParams,
                     "id": $scope.fono.id
                 }
             }
-
             console.log(palavra);
+            //
             palavraService.adicionarPalavra(palavra)
                 .then(function (success) {
-                    $state.go('/palavra/' + $scope.idPaciente);
+                    $state.go('menu.inicio');
                 })
                 .catch(function (error) {
                 })
