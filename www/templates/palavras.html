@@ -10,7 +10,9 @@
           <input type="search" placeholder="" ng-model="criterioDeBusca">
         </label>
         <ion-list id="palavras-list8" ng-repeat="palavra in palavras | filter: criterioDeBusca | orderBy:'$index':true">
-          <ion-item id="palavras-list-item69">{{palavra.palavra}} - {{palavra.nivel}}</ion-item>
+          <ion-item ng-if="palavra.nivel == 'facil'" id="palavras-list-item69">{{palavra.palavra | uppercase}} - FÁCIL</ion-item>
+          <ion-item ng-if="palavra.nivel == 'medio'" id="palavras-list-item69">{{palavra.palavra | uppercase}} - MÉDIO</ion-item>
+          <ion-item ng-if="palavra.nivel == 'dificil'" id="palavras-list-item69">{{palavra.palavra | uppercase}} - DIFICÍL</ion-item>
         </ion-list>
       </form>
     </div>

@@ -13,8 +13,14 @@
             <a class="item" href="#">
               Tempo: {{partida.tempo}}
             </a>
-            <a class="item" href="#">
-              Nivel: {{partida.nivel}}
+            <a class="item" href="#" ng-if="partida.nivel == 'facil'">
+              Nível: Fácil
+            </a>
+            <a class="item" href="#" ng-if="partida.nivel == 'medio'">
+              Nível: Médio
+            </a>
+            <a class="item" href="#" ng-if="partida.nivel == 'dificil'">
+              Nível: Dificíl
             </a>
           </div>
           <div class="list">
