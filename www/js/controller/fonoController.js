@@ -31,15 +31,13 @@ app.controller('fonoCtrl', function($scope, $state, $stateParams, $http, $ionicP
         if (resposta == true) {
             fonoService.removerFono($scope.fono.id)
                 .then(function (success) {
-                    localStorage.clear();
-                    //
                     $state.go('login');
+                    localStorage.clear();
                 })
                 .catch(function (error) {
                     alert("Não foi possível remover os dados");
                 })
         }
     }
- 
 
 })
