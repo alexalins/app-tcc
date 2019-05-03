@@ -3,11 +3,11 @@
     <form id="partidas-form5" class="list">
       <label class="item item-input" id="partidas-search1">
         <i class="icon ion-search placeholder-icon"></i>
-        <input type="search" placeholder="">
+        <input type="search" placeholder="" ng-model="criterioDeBusca">
       </label>
     </form>
     <div class="list card" id="partidas-card26" ng-if="paciente.partidas.length > 0">
-      <ion-list id="partidas-list6" ng-repeat="partida in paciente.partidas | orderBy:'$index':true">
+      <ion-list id="partidas-list6" ng-repeat="partida in paciente.partidas | orderBy:'$index':true | filter: criterioDeBusca">
         <ion-item id="partidas-list-item48" href="#/side-menu21/partida/{{partida.id}}">{{partida.jogo.nome}} - {{partida.tempo}}</ion-item>
       </ion-list>
     </div>
