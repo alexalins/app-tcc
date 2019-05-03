@@ -125,7 +125,7 @@ angular.module('app.routes', [])
     views: {
       'side-menu21': {
         templateUrl: 'templates/meusDados.html',
-        controller: 'fonoCtrl'
+        controller: 'dadosCtrl'
       }
     }
   })

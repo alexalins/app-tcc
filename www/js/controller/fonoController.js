@@ -15,15 +15,17 @@ app.controller('fonoCtrl', function($scope, $state, $stateParams, $http, $ionicP
     $scope.atualizarFono = function (fono) {
         fonoService.atualizarFono(fono, $scope.fono.id)
             .then(function (success) {
+                localStorage.clear();
                 $scope.fono = success.data;
                 var dados = angular.toJson(success.data);
                 localStorage.setItem("dados", dados);
-                $state.go("menu.meusDados");
+                //$state.go("menu.meusDados");
+                location.reload();
+                alert("Atualizado com sucesso!");
             })
             .catch(function (error) {
                 alert("Não foi possível atualizar os dados");
             })
-
     }
     //
     $scope.removerFono = function () {
@@ -39,5 +41,4 @@ app.controller('fonoCtrl', function($scope, $state, $stateParams, $http, $ionicP
                 })
         }
     }
-
 })
