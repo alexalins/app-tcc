@@ -1,4 +1,4 @@
-app.controller('palavraCtrl', function($scope, $rootScope, $state, $stateParams, $http, $ionicPopup, $ionicLoading, palavraService){
+app.controller('palavraCtrl', function($scope, $rootScope, $state, $stateParams, $location, $http, $ionicPopup, $ionicLoading, palavraService){
     dados = localStorage.getItem("dados");
     $scope.fono = angular.fromJson(dados);
     $scope.idPaciente = $stateParams.id;
@@ -27,7 +27,7 @@ app.controller('palavraCtrl', function($scope, $rootScope, $state, $stateParams,
             //
             palavraService.adicionarPalavra(palavra)
                 .then(function (success) {
-                    $state.go('menu.inicio');
+                    location.reload();
                 })
                 .catch(function (error) {
                 })

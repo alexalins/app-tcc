@@ -7,19 +7,19 @@
             <div class="item item-divider">
               Partida
             </div>
-            <a class="item" href="#">
+            <a class="item">
               Jogo: {{partida.jogo.nome}}
             </a>
-            <a class="item" href="#">
+            <a class="item">
               Tempo: {{partida.tempo}}
             </a>
-            <a class="item" href="#" ng-if="partida.nivel == 'facil'">
+            <a class="item" ng-if="partida.nivel == 'facil'">
               Nível: Fácil
             </a>
-            <a class="item" href="#" ng-if="partida.nivel == 'medio'">
+            <a class="item" ng-if="partida.nivel == 'medio'">
               Nível: Médio
             </a>
-            <a class="item" href="#" ng-if="partida.nivel == 'dificil'">
+            <a class="item" ng-if="partida.nivel == 'dificil'">
               Nível: Dificíl
             </a>
           </div>
@@ -27,7 +27,7 @@
             <div class="item item-divider">
               Acertos
             </div>
-            <a class="item" href="#" ng-repeat="acertos in partida.relatorio.acertos">
+            <a class="item" ng-repeat="acertos in partida.relatorio.acertos">
               {{acertos.palavra}}
             </a>
           </div>
@@ -35,7 +35,7 @@
               <div class="item item-divider">
                 Erros
               </div>
-              <a class="item" href="#" ng-repeat="erros in partida.relatorio.erros">
+              <a class="item" ng-repeat="erros in partida.relatorio.erros">
                 {{erros.palavra}}
               </a>
             </div>

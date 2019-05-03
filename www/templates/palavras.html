@@ -1,7 +1,8 @@
 <ion-view title="Palavras" id="page11" style="background-color: #038AD3">
   <ion-content padding="true" class="has-header">
     <div class="spacer" style="width: 300px; height: 20px;"></div>
-    <a href="#/side-menu21/cadastroPalavras/{{idPaciente}}" id="palavras-button9" class="button button-balanced button-block">Cadastrar
+    <a href="#/side-menu21/cadastroPalavras/{{idPaciente}}" id="palavras-button9"
+      class="button button-balanced button-block">Cadastrar
       palavras</a>
     <div class="list card" id="palavras-card29">
       <form id="palavras-form8" class="list">
@@ -10,9 +11,19 @@
           <input type="search" placeholder="" ng-model="criterioDeBusca">
         </label>
         <ion-list id="palavras-list8" ng-repeat="palavra in palavras | filter: criterioDeBusca | orderBy:'$index':true">
-          <ion-item ng-if="palavra.nivel == 'facil'" id="palavras-list-item69">{{palavra.palavra | uppercase}} - FÁCIL</ion-item>
-          <ion-item ng-if="palavra.nivel == 'medio'" id="palavras-list-item69">{{palavra.palavra | uppercase}} - MÉDIO</ion-item>
-          <ion-item ng-if="palavra.nivel == 'dificil'" id="palavras-list-item69">{{palavra.palavra | uppercase}} - DIFICÍL</ion-item>
+          <div class="row">
+            <div class="col col-80">
+              <ion-item ng-if="palavra.nivel == 'facil'" id="palavras-list-item69">{{palavra.palavra | uppercase}} -
+                FÁCIL</ion-item>
+              <ion-item ng-if="palavra.nivel == 'medio'" id="palavras-list-item69">{{palavra.palavra | uppercase}} -
+                MÉDIO</ion-item>
+              <ion-item ng-if="palavra.nivel == 'dificil'" id="palavras-list-item69">{{palavra.palavra | uppercase}} -
+                DIFICÍL</ion-item>
+            </div>
+            <div class="col">
+                <a class="button button-icon icon ion-trash-b" style="color: #FE2E2E" ng-click="removerPalavra(palavra.id)"></a>
+            </div>
+          </div>
         </ion-list>
       </form>
     </div>
