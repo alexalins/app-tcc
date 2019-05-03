@@ -1,4 +1,4 @@
-app.controller('pacienteCtrl', function($scope, $rootScope, $stateParams, $http, $ionicPopup, $ionicLoading, pacienteService){
+app.controller('pacienteCtrl', function($scope, $rootScope, $stateParams, $state, $http, $ionicPopup, $ionicLoading, pacienteService){
     //console.log($stateParams.id);
     pacienteService.getPaciente($stateParams.id)
         .then(function (success) {
@@ -22,15 +22,12 @@ app.controller('pacienteCtrl', function($scope, $rootScope, $stateParams, $http,
     }
     //
     $scope.removerPaciente = function () {
-        var resposta = confirm("Deseja remover sua conta?");
+        var resposta = confirm("Deseja remover a conta?");
         if (resposta == true) {
             pacienteService.removerPaciente($scope.paciente.id)
                 .then(function (success) {
-                    $scope.paciente = success.data;
-                    var dados = angular.toJson(success.data);
-                    localStorage.setItem("dados", dados);
-                    //
-                    $location.path('/login');
+                    alert("Paciente será removido em instante!");
+                    $state.go('menu.meusPacientes');
                 })
                 .catch(function (error) {
                     alert("Não foi possível atualizar os dados");

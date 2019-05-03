@@ -1,4 +1,4 @@
-app.controller('palavraCtrl', function($scope, $rootScope, $state, $stateParams, $location, $http, $ionicPopup, $ionicLoading, palavraService){
+app.controller('palavraCtrl', function ($scope, $rootScope, $state, $stateParams, $location, $http, $ionicPopup, $ionicLoading, palavraService) {
     dados = localStorage.getItem("dados");
     $scope.fono = angular.fromJson(dados);
     $scope.idPaciente = $stateParams.id;
@@ -35,12 +35,16 @@ app.controller('palavraCtrl', function($scope, $rootScope, $state, $stateParams,
     }
     //
     $scope.removerPalavra = function (id) {
-        palavraService.removerPalavra(id)
-        .then(function (success) {
-            location.reload();
-        })
-        .catch(function (error) {
-        })
+
+        var resposta = confirm("Deseja remover está palavra?");
+        if (resposta == true) {
+            palavraService.removerPalavra(id)
+                .then(function (success) {
+                    location.reload();
+                })
+                .catch(function (error) {
+                })
+        }
     }
     //
     var i = 1;

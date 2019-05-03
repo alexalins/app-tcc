@@ -1,4 +1,4 @@
-app.controller('fonoCtrl', function($scope, $state, $stateParams, $http, $ionicPopup, $ionicLoading, fonoService){
+app.controller('fonoCtrl', function($scope, $state, $stateParams, $http, $ionicPopup, $ionicLoading, fonoService, pacienteService){
     dados = localStorage.getItem("dados");
     $scope.fono = angular.fromJson(dados);
     //
@@ -38,6 +38,20 @@ app.controller('fonoCtrl', function($scope, $state, $stateParams, $http, $ionicP
                 })
                 .catch(function (error) {
                     alert("Não foi possível remover os dados");
+                })
+        }
+    }
+    //
+    $scope.removerPaciente = function (id) {
+        var resposta = confirm("Deseja remover está conta?");
+        if (resposta == true) {
+            pacienteService.removerPaciente(id)
+                .then(function (success) {
+                    location.reload();
+                    //$location.path('/login');
+                })
+                .catch(function (error) {
+                    alert("Não foi possível atualizar os dados");
                 })
         }
     }

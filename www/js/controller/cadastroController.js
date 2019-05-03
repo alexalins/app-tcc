@@ -18,7 +18,7 @@ app.controller('cadastroCtrl', function($scope, $rootScope, $state, $http, $ioni
         cadastroService .cadastroPaciente(paciente, $scope.fono.id)
         .then(function (success){
             alert("Cadatro realizado com sucesso!");
-            $state.go('menu.pacientes');
+            $state.go('menu.meusPacientes');
         })
         .catch(function(error){
             alert("Não foi possível realizar o cadastro");
